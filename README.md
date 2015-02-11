@@ -12,7 +12,8 @@ Sliding Window Extraction of Explicit Polymorphisms
                                                                                                                     
   OPTIONAL:                                                                                                         
   -s <int>                  genotypic liklihood filtering stringency: default (0): 0 -> low, 1 -> medium, 2 -> high 
-   -d <int>                  minimum read depth filter per genotype: default (4): 1 - 100                            
+  
+  -d <int>                  minimum read depth filter per genotype: default (4): 1 - 100                            
   -r <float>                minimum ratio of alternate allele to reference allele: default (0): 0 - 2               
   -w <int>                  window size in bp: default (100) should be <= read length for optimal quality           
   --no_cleanup              does not delete intermediate vcf files: default (FALSE)                                 
