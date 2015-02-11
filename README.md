@@ -1,7 +1,7 @@
 # SWEEP
 Sliding Window Extraction of Explicit Polymorphisms
 
-##This is free software and is not subject to support.  For allopolyplod species will filter allelic SNPs from homeologous SNPs (false positives).  Has been validated for 85% accuracy rate.
+##This is free software and is not subject to support.  For allopolyplod species will filter allelic SNPs from homeologous SNPs (false positives).  Validated for 85% accuracy rate.
 ##written by Josh Clevenger 2014
 
 
