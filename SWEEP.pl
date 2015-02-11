@@ -98,9 +98,9 @@ main: {
 
      &process_cmd("samtools mpileup -u -f $genome $input_bam | bcftools view -bcv - > temp.raw.bcf");
      &process_cmd("bcftools view temp.raw.bcf > prefilter.vcf");
-     &process_cmd("python scripts/Haplotype.py prefilter.vcf filter.vcf $length $window");
-     &process_cmd("python scripts/FindSNP.py filter.vcf stringent.vcf $lh $length");
-     &process_cmd("python scripts/FilterDepth.py stringent.vcf $output $depth $ratio $contingency");
+     &process_cmd("python Haplotype.py prefilter.vcf filter.vcf $length $window");
+     &process_cmd("python FindSNP.py filter.vcf stringent.vcf $lh $length");
+     &process_cmd("python FilterDepth.py stringent.vcf $output $depth $ratio $contingency");
 
      unless ($no_cleanup) {
 
