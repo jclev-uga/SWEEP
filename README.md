@@ -1,7 +1,7 @@
 # SWEEP
 Sliding Window Extraction of Explicit Polymorphisms
 
-##This is a free pipeline open for use, modification, etc released under the MIT license (See included file LICENSE for details).  For allopolyplod species will filter allelic SNPs from homeologous SNPs (false positives).  Validated for 85% accuracy rate by Sanger Sequencing.
+##This is a free pipeline released under the MIT license (See included file LICENSE for details).  For allopolyplod species will filter allelic SNPs from homeologous SNPs (false positives).  Validated for 85% accuracy rate by Sanger Sequencing.
 ##written by Josh Clevenger 2014
 
 
