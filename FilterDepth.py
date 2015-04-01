@@ -1,6 +1,6 @@
-
 import sys
 import math
+import re
 
 def main():
 
@@ -8,6 +8,7 @@ def main():
      outfile = open(sys.argv[2], "w")
      filter = int(sys.argv[3])
      alleles = float(sys.argv[4])
+     cont = int(sys.argv[5])
 
      for record in records:
 
@@ -29,7 +30,12 @@ def main():
                continue
 
           for i in range(len(Info)):
-
+               if Info[i].startswith('DP='):
+                    DP = Info[i].split('=')
+                    Depth = DP[1]
+                    Total = Depth
+                    ratio = alleles
+                    break
                if Info[i].startswith('DP4'):
                     DP = Info[i].split('=')
                     Depth = DP[1].split(',')
@@ -39,13 +45,16 @@ def main():
 
           if Total > filter:
                if ratio >= alleles:
-                    for x in record:
-               outfile.write("%s\t" % x)
-                    outfile.write('\n')
-
+                    if cont == 1:
+                         if p < 0.05:
+                              for x in record:
+                                   outfile.write("%s\t" % x)
+                              outfile.write('\n')
+                    elif cont == 0:
+                         for x in record:
+                              outfile.write("%s\t" % x)
+                         outfile.write('\n')
 
 
      records.close()
      outfile.close()
-
-
