@@ -17,9 +17,9 @@ Sliding Window Extraction of Explicit Polymorphisms
   -r <float>                minimum ratio of alternate allele to reference allele: default (0): 0 - 2               
   -w <int>                  window size in bp: default (100) should be <= read length for optimal quality           
   --no_cleanup              does not delete intermediate vcf files: default (FALSE)   
-  --ultimate                performs ultimate filtering for all homozygous calls                                    
-                            checks all reads mapped to base for any alterate allele (will take longer)              
-                            REQUIRES Biopython with pysam module installed in your path!!                           
+  --ultimate                performs ultimate filtering for all homozygous calls                                                                         checks all reads mapped to base for any alterate allele (will take longer)              
+                            REQUIRES Biopython with pysam module installed in your path!!
+                            
   -vcf <string>             Optional use an existing vcf file as input                                              
   -num_genotypes <int>      if vcf file is used, enter number of genotypes
                                                                                                                     
