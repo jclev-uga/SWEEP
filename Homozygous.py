@@ -64,7 +64,7 @@ def parseMD(MD):
 
 def getPile(samfile, chr, position, alt):
      if position -2 >= 0:
-          for pileupcolumn in samfile.pileup(chr, position-2, position+2):
+          for pileupcolumn in samfile.pileup(chr, position-2, position+2, stepper="all"):
                if (pileupcolumn.pos + 1) == position:
                     for pileupread in pileupcolumn.pileups:
                          if pileupread.alignment.query_sequence[pileupread.query_position] == alt:
@@ -101,7 +101,7 @@ for snp in snps:
      position = int(hold[1])
      ref = hold[3]
      alt = hold[4]
-     PL = re.findall('\s(\d+\,\d+\,\d+)', snp)
+     PL = re.findall('(?<=\t)(\d+\,\d+\,\d+)', snp)
      genotype = get_genotype(PL,len(PL))
      for x in range(bamnumber):
           falsepositive = 0
