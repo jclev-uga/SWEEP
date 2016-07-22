@@ -18,6 +18,7 @@ def main():
           if line[0].startswith('#'):
                outfile.write(line)
                outfile.write('\n')
+               continue
 
           file[x] = line
           x = x + 1
