@@ -108,18 +108,18 @@ main: {
      if ($vcf eq "") {
          &process_cmd("samtools mpileup -u -f $genome $input_bam | bcftools view -bcv - > temp.raw.bcf");
           &process_cmd("bcftools view temp.raw.bcf > prefilter.vcf");
-          &process_cmd("python scripts/Haplotype.py prefilter.vcf filter.vcf $length $window"); } else {
-          &process_cmd("python scripts/vcf.py $vcf filter.vcf $vcfnum $window");
+          &process_cmd("python Haplotype.py prefilter.vcf filter.vcf $length $window"); } else {
+          &process_cmd("python vcf.py $vcf filter.vcf $vcfnum $window");
      }
 
 
      if ($ultimate) {
-          &process_cmd("python scripts/Homozygous.py $genome filter.vcf ultimate.vcf '$input_bam'");
-          &process_cmd("python scripts/FilterDepth.py ultimate.vcf $output $depth $ratio $contingency"); }
+          &process_cmd("python Homozygous.py $genome filter.vcf ultimate.vcf '$input_bam'");
+          &process_cmd("python FilterDepth.py ultimate.vcf $output $depth $ratio $contingency"); }
 
      unless ($ultimate) {
-          &process_cmd("python scripts/FindSNP.py filter.vcf stringent.vcf $lh $length");
-          &process_cmd("python scripts/FilterDepth.py stringent.vcf $output $depth $ratio $contingency"); }
+          &process_cmd("python FindSNP.py filter.vcf stringent.vcf $lh $length");
+          &process_cmd("python FilterDepth.py stringent.vcf $output $depth $ratio $contingency"); }
 
      unless ($no_cleanup) {
 
