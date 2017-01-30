@@ -90,7 +90,7 @@ def get_genotype(line, number):
      for x in range(number):
           print x
           print line
-          prob = line[x].split(',')
+          prob = line[x].split(':')[1].split(',')
           if len(prob) > 3:
                return 0
           if int(prob[0]) == 0 and int(prob[1]) >= 0 and int(prob[2]) > 0:
