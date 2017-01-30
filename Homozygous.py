@@ -101,7 +101,7 @@ for snp in snps:
      position = int(hold[1])
      ref = hold[3]
      alt = hold[4]
-     PL = re.findall('(?<=\t)(\d+\,\d+\,\d+)', snp)
+     PL = re.findall('(?<=\:)(\d+\,\d+\,\d+)', snp)
      genotype = get_genotype(PL,len(PL))
      for x in range(bamnumber):
           falsepositive = 0
