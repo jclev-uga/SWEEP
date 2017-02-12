@@ -26,7 +26,7 @@ Sliding Window Extraction of Explicit Polymorphisms
                                                                                                                     
   To use this script there are certain requirements:                                                                
                                                                                                                     
-  (1) Samtools v0.1.9 and Bcftools v0.1.9 must be in your path -> Will not work with later versions                 
+  (1) Samtools and Bcftools must be in your path -> Updated to be compatible with latest versions                 
   (2) To do this easily you can add the path in your shell script                                                   
   (3) alignment Bam files must be sorted and indexed                                                                
   (4) Include as many bam files as you need separated with '-b'                                                     
