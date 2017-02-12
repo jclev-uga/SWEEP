@@ -106,8 +106,8 @@ main: {
      my $length = 0+@bamfile;
      my $depth = $filter*$length;
      if ($vcf eq "") {
-         &process_cmd("samtools mpileup -u -f $genome $input_bam | bcftools view -bcv - > temp.raw.bcf");
-          &process_cmd("bcftools view temp.raw.bcf > prefilter.vcf");
+         &process_cmd("samtools mpileup -g -f $genome $input_bam > temp.raw.bcf");
+          &process_cmd("bcftools call -vc temp.raw.bcf > prefilter.vcf");
           &process_cmd("python Haplotype.py prefilter.vcf filter.vcf $length $window"); } else {
           &process_cmd("python vcf.py $vcf filter.vcf $vcfnum $window");
      }
