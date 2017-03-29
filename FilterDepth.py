@@ -58,3 +58,5 @@ def main():
 
      records.close()
      outfile.close()
+     
+main()
