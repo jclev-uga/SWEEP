@@ -19,7 +19,7 @@ for record in records:
      genotypes = {}
 
      for x in range(9,9+num):
-          genotypes.setdefault(x, []).append(record[x].split(','))
+          genotypes.setdefault(x, []).append(record[x].split(':')[1].split(','))
      decision = 0
      for x in range(9,9+num):
           current = genotypes[x]
