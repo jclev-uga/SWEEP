@@ -45,8 +45,8 @@ def main():
 def window(first,second,num,win):
 
 
-     one=re.findall('(\d+\,\d+\,\d+)', first)
-     two=re.findall('(\d+\,\d+\,\d+)', second)
+     one=re.findall('(?<=\:)(\d+\,\d+\,\d+)', first)
+     two=re.findall('(?<=\:)(\d+\,\d+\,\d+)', second)
      first=first.split()
      second=second.split()
 
