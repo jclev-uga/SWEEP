@@ -59,7 +59,6 @@ def window(first,second,num,win):
                     return 0
 
                for x in range(num):
-                    print(genotype1[x])
                     if (genotype1[x] == genotype2[x]):
                          continue
                     else:
@@ -88,8 +87,6 @@ def window(first,second,num,win):
 def get_genotype(line, number):
      genotype = []
      for x in range(number):
-          print x
-          print line
           prob = line[x].split(':')[1].split(',')
           if len(prob) > 3:
                return 0
